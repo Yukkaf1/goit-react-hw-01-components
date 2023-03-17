@@ -18,8 +18,9 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      {/* <Statistics cards={data} />
-      <FriendList cardsFriends={friends} />
+      <Statistics cards={data} />
+
+      {/* <FriendList cardsFriends={friends} />
       <TransactionHistory items={transactions} /> */}
     </>
   );

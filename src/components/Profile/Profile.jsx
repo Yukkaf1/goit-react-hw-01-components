@@ -1,34 +1,41 @@
 import PropTypes from 'prop-types';
-import { ProfileBlock, ProfileDescription } from './Profile.styled';
+import {
+  ProfileBlock,
+  ProfileDescription,
+  ProfileImg,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStats,
+  ProfileStatsInfo,
+  ProfileLabel,
+  ProfileQuantity,
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <ProfileBlock>
       <ProfileDescription>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-          alt="User avatar"
-          class="avatar"
-        />
-        <p class="name">Petra Marica</p>
-        <p class="tag">@pmarica</p>
-        <p class="location">Salvador, Brasil</p>
+        <ProfileImg src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
       </ProfileDescription>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">1000</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">2000</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">3000</span>
-        </li>
-      </ul>
+      <ProfileStats>
+        <ProfileStatsInfo>
+          <ProfileLabel>Followers</ProfileLabel>
+          <ProfileQuantity>{stats.followers}</ProfileQuantity>
+        </ProfileStatsInfo>
+        <ProfileStatsInfo>
+          <ProfileLabel>Views</ProfileLabel>
+          <ProfileQuantity>{stats.views}</ProfileQuantity>
+        </ProfileStatsInfo>
+        <ProfileStatsInfo>
+          <ProfileLabel>Likes</ProfileLabel>
+          <ProfileQuantity>{stats.likes}</ProfileQuantity>
+        </ProfileStatsInfo>
+      </ProfileStats>
     </ProfileBlock>
   );
 };
