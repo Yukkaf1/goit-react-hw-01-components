@@ -1,15 +1,26 @@
-import { Recipe } from './Recipe/Recipe';
-import { RecipeList } from './RecipeList/RecipeList';
-import recipes from '../recepies.json';
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
+import user from '../data/user.json';
+import data from '../data/data.json';
+import friends from '../data/friends.json';
+import transactions from '../data/transactions.json';
 
 export const App = () => {
   return (
-    <div>
-      <RecipeList recipes={recipes} />
-
-      {/* <Recipe recipe={recipes[0]} />
-      <Recipe recipe={recipes[1]} /> */}
-      {/* <Recipe name={recipes[0].name} time={recipes[0].time}/> */}
-    </div>
+    <>
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      {/* <Statistics cards={data} />
+      <FriendList cardsFriends={friends} />
+      <TransactionHistory items={transactions} /> */}
+    </>
   );
 };
