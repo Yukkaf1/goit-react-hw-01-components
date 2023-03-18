@@ -20,8 +20,9 @@ export const App = () => {
       />
       <Statistics cards={data} />
 
-      {/* <FriendList cardsFriends={friends} />
-      <TransactionHistory items={transactions} /> */}
+      <FriendList friends={friends} />
+
+      <TransactionHistory items={transactions} />
     </>
   );
 };

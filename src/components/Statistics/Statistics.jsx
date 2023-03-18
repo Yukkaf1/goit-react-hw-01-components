@@ -14,10 +14,17 @@ export const Statistics = ({ cards }) => {
       <StatTitle>Upload stats</StatTitle>
 
       <StatList>
+        {/* {console.log(
+          cards.reduce(
+            (a, c) => ((a[c.label] = (a[c.label] || 0) + c.percentage), a),
+            {}
+          )
+        )} */}
+
         {cards.map(({ id, label, percentage }) => (
           <StatItem key={id}>
             <StatLabel>{label}</StatLabel>
-            <StatPercentage>{percentage}% </StatPercentage>
+            <StatPercentage>{percentage}%</StatPercentage>
           </StatItem>
         ))}
       </StatList>
