@@ -8,19 +8,12 @@ import {
   StatPercentage,
 } from './Statistics.styled';
 
-export const Statistics = ({ cards }) => {
+export const Statistics = ({ cards, title }) => {
   return (
     <StatSection>
-      <StatTitle>Upload stats</StatTitle>
+      {title && <StatTitle>{title}</StatTitle>}
 
       <StatList>
-        {/* {console.log(
-          cards.reduce(
-            (a, c) => ((a[c.label] = (a[c.label] || 0) + c.percentage), a),
-            {}
-          )
-        )} */}
-
         {cards.map(({ id, label, percentage }) => (
           <StatItem key={id}>
             <StatLabel>{label}</StatLabel>
@@ -40,5 +33,5 @@ Statistics.propTypes = {
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
-  ),
+  ).isRequired,
 };
